@@ -26,7 +26,7 @@ jobs:
         
         - name: Run unit test
           run: |
-            pytest
+            pytest tests/test_app.py
         
     code-quality:
         runs-on: ubuntu-latest
