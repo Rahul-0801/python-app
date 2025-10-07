@@ -26,6 +26,7 @@ jobs:
         
         - name: Run unit test
           run: |
+            export PYTHONPATH="${{ github.workspace }}"
             pytest tests/test_app.py
         
     code-quality:
