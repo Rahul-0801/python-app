@@ -9,6 +9,9 @@ on:
 
 jobs:
     build:
+        permissions:
+          id-token: 'write'
+          
         runs-on: ubuntu-latest
 
         steps:
@@ -51,7 +54,8 @@ jobs:
     
     docker:
         runs-on: ubuntu-latest
-          
+        permissions:
+          id-token: 'write'  
         needs: build
 
         env:
@@ -85,7 +89,8 @@ jobs:
         
     updateCloudRun:
         runs-on: ubuntu-latest
-
+        permissions:
+          id-token: 'write'
         needs: docker
 
         env:
